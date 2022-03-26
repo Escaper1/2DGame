@@ -20,13 +20,11 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
       movementInput.x=  Input.GetAxisRaw("Horizontal");
-        Debug.Log(movementInput.x);
+      movementInput.y = Input.GetAxisRaw("Vertical");
+      
+        transform.position +=  new Vector3(movementInput.x, movementInput.y , 0f) * movementSpeed * Time.deltaTime;
+
+
         
-
-        movementInput.y = Input.GetAxisRaw("Vertical");
-        Debug.Log(movementInput.y);
-
-
-        Debug.Log("This is Vector2" + movementInput);
     }
 }
